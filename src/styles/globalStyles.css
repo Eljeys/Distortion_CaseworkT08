@@ -24,6 +24,9 @@ html {
   --default-bg-clr: #f1f1fc;
   --default-stroke-clr: #4c3973;
   --default-text-clr: #1d1d23;
+  /*btn Effect Colors:*/
+  --hover-bgCrl: rgba(221, 221, 253, 1);
+  --focus-borderCrl: rgb(117, 87, 177);
 
   /*Typografi desktop*/
   --fontsize-h1: 6rem;
