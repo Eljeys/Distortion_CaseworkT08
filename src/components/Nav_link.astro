@@ -1,0 +1,22 @@
+---
+const {linktext, url}=Astro.props;
+---
+
+<a href={url}>{linktext}</a>
+
+
+<style>
+ 
+    a{
+        color: white;
+        font-family: "Bebas Neue";
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    a:hover{
+        color:#FFCE2B;
+    }
+    a:active{
+        color: var(--active-background);
+    }
+</style>

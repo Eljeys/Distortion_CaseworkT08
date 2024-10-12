@@ -1,5 +1,37 @@
 ---
 import BtnTicket from "./Btn_Ticket.astro";
+import NavLink from "./Nav_link.astro";
 ---
-
+<header>
+    <a href="/">
+    <img src="images/Distortion_logo.png" alt="Logo">
+    </a>
+    <nav>
+<NavLink linktext="TICKETS" url="#"/>
+<NavLink linktext="LINEUP" url="/lineup"/>
+<NavLink linktext="JOIN MAILING LIST" url="#form"/>
+    </nav>
 <BtnTicket/>
+</header>
+
+
+
+
+<style>
+    header{
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: row;
+    }
+    img{
+        width: 5rem;
+        height: 5rem;
+
+    }
+    nav{
+        margin-left: auto;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+</style>
