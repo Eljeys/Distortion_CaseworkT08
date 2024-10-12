@@ -1,0 +1,55 @@
+---
+
+---
+
+<a href="#" class="ticket-button">
+    Ticket
+</a>
+
+<style>
+    .ticket-button{
+        display: inline-block;
+        background-color: var(--secondary-clr);
+        padding:0.62rem 2rem;
+        /* border-radius: 1.2rem; */
+        position: relative;
+        text-align: center;
+        font-family:"Bebas Neue";
+        font-size: 2rem;
+        font-weight:var(--fontweight-bold: 900);
+        /* border: 2px solid black; */
+        width:12.5rem;
+    }
+    a{
+        color: black;
+    }
+    .ticket-button::before, .ticket-button::after{
+        content: "";
+        position: absolute;
+        top:50%;
+        height: 1.8rem;
+        width: 1.8rem;
+        background-color: #140f1e;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+    .ticket-button::before{
+        left:-0.5rem;
+    }
+    .ticket-button::after{
+        right:-0.5rem;
+    }
+    /*Styling af states*/
+    .ticket-button:hover{
+        background-color: var(--hover-background);
+    }
+    .ticket-button:active{
+        background-color: var(--active-background);
+        border: 3px solid var(--active-stroke);
+    }
+    .ticket-button:focus{
+        background-color: var(--secondary-clr);
+        border: 3px solid var(--focus-stroke)
+    }
+
+</style>
