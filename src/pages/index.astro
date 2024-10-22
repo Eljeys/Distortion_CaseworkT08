@@ -7,34 +7,52 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="text-container">
       <h1>See you in 2025</h1>
     </div>
-      <div class="hero-image-container">
-        <img src="/images/forsidebillede.webp" alt="Distortion gadefest" />
-      </div>
-      <div class="logo-container">
-        <img src="/images/Distortion_logo.png" alt="Distortions logo" />
-      </div>
+    <div class="hero-image-container">
+      <img src="/images/forsidebillede.webp" alt="Distortion gadefest" />
+    </div>
+    <div class="logo-container">
+      <img src="/images/Distortion_logo.png" alt="Distortions logo" />
+    </div>
+  </section>
+
+  <section class="navigation">
+    <figure class="img-container-1">
+        <a href="/lineup">
+      <img src="/images/distortion_gadedans_250x250.webp" alt="folk der danser til Distortion" />
+      <figcaption>Lineup 2024</figcaption>
+        </a>
+    </figure>
+    <figure class="img-container-2">
+        <a href="#">
+        <img src="/images/distortion_gadehygge.webp" alt="forsamling af mennesker der sidder og spiser">
+        <figcaption>Events 2024</figcaption>
+        </a>
+    </figure>
   </section>
 </MainLayout>
 <style>
   .hero {
     display: flex;
     justify-content: center;
-  }
-  .hero-image-container {
-    display: flex;
-    /* overflow: hidden; */
-    position: relative;
-    display: flex;
-    justify-content: center;
     align-items: center;
   }
-  .logo-container img {
+  .hero-image-container  {
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .logo-container{
+      display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
+  }
+  .logo-container img  {
     width: 200px;
-    left: 45%;
-    top: 35%;
   }
   .text-container h1 {
     color: white;
@@ -46,4 +64,44 @@ import MainLayout from "../layouts/MainLayout.astro";
     right: 4%;
     writing-mode: vertical-rl;
   }
+  .navigation{
+    margin-top: 3rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .navigation img{
+    width: 100%;
+    position: relative;
+  }
+  .img-container-1 a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-container-2 a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  figcaption {
+    font-family:Bebas Neue;
+    color: var( --secondary-clr);
+    font-size:4rem;
+    position: absolute;
+    cursor: pointer;
+  }
+
+
+@media screen (max-width: 768px){
+    figcaption{
+        font-size: 1rem;
+    }
+    
+}
 </style>
