@@ -7,7 +7,7 @@
 
 body {
   margin: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #140f1e;
   color: #ffffff;
 }
@@ -105,4 +105,8 @@ img {
   width: 100;
   height: auto;
   display: block;
+}
+
+input {
+  outline: #ffd035;
 }

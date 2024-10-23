@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
 ---
 
 <MainLayout title="Home">
@@ -29,8 +30,31 @@ import MainLayout from "../layouts/MainLayout.astro";
         </a>
     </figure>
   </section>
+  <h2>Join for our Newsletter</h2>
+    <article class="form">
+        <form action="Newsletter">
+          <div>
+          <label for="name">Name*</label>
+            <input type="text" placeholder="Tab your name here!" id="name" required/>
+          </div>
+            <div>
+            <label for="email">Email*</label>
+              <input type="email" placeholder="example@mail.com" id="email" required/>
+            </div>
+            <div>
+              <label for="phonenumber">Phonenumber*</label>
+                <input type="number" placeholder="+(45) - 00 00 -00 00" name="phonenumber" id="phonenumber" required/>
+            </div>
+                <input type="submit" value="Sign up">
+        </form>
+    </article>
+
 </MainLayout>
 <style>
+  h2{
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
   .hero {
     display: flex;
     justify-content: center;
@@ -97,11 +121,72 @@ import MainLayout from "../layouts/MainLayout.astro";
     cursor: pointer;
   }
 
+  form{
+    font-family: "Montserrat", sans-serif;
+    width:25%;;
+  }
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 8rem;
+  }
+
+  
+  input{
+    font-family: "Montserrat", sans-serif;
+    margin: 0.8rem 0;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    
+  }
+  input[type="submit"]{
+    font-family:Bebas Neue;
+    font-size: 1.5rem;
+    background-color: var(--secondary-clr);
+    margin-top: 2rem;
+    border-radius:10%;
+  }
+
+  /*Button interactiv*/
+  input[type="submit"]:hover{
+      background-color: var( --hover-background);
+      color: var(--hover-text);
+  }
+  input[type="submit"]:active{
+    border: 3px solid var(--active-stroke) ;
+  }
+  input[type="submit"]:focus{
+    color: black;
+    border: 3px solid var(--active-stroke) ;
+    background-color: var(--secondary-clr);
+  }
+  input:focus{
+    border:  solid #ffd035;
+}
+  
+  label{
+    color:rgba(255, 224, 121, 0.5); 
+  }
+ 
+
 
 @media screen (max-width: 768px){
     figcaption{
         font-size: 1rem;
     }
-    
 }
 </style>
+<script>
+  const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"]');
+
+  inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.previousElementSibling.style.color = 'var(--focus-stroke)'; 
+        });
+        input.addEventListener('blur', function() {
+            this.previousElementSibling.style.color = 'rgba(255, 224, 121, 0.5)';  
+        });
+    });   
+</script>
