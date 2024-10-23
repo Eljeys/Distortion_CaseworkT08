@@ -30,6 +30,7 @@ const { title } = Astro.props;
     <Header />
     <main>
       <slot />
+      <div class="style_divider"></div>
     </main>
     <Footer />
   </body>
@@ -40,6 +41,15 @@ const { title } = Astro.props;
     display: grid;
     grid-template-rows: auto 1fr;
   }
+  .style_divider{
+    display: flex;
+  margin: 1.5rem 0 1rem;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid rgb(255, 255, 255);
+  margin-bottom: 5rem;
+  }
+
 
   @media (width<=800px){
     main{

@@ -1,0 +1,43 @@
+---
+const{data}=Astro.props;
+---
+<article>
+    <img src={data.image_url} alt="">
+   
+    <h4>{data.artist}</h4>
+    
+</article>
+
+  <style>
+    img{
+        display: block;
+      width: minmax(250px, 500px);
+      height: 250px;
+      padding: 0;
+      margin-bottom: 2rem;
+  }
+  img:hover{
+    scale: 1.2;
+  }
+  article{
+    cursor: pointer;
+    display:block;
+    width: fit-content;
+    /* border: solid red; */
+    filter: drop-shadow(13px 12px 4px #231a3644);
+    overflow: hidden;
+  }
+
+   h4{
+    font-size: 2rem;
+    line-height:1.6rem;
+    display: inline;
+    margin-top: 0.8rem;
+    color: white;
+  }
+
+  /* div{
+    border: solid red;
+    width: fit-content;
+  } */
+</style>

@@ -84,7 +84,8 @@ h4 {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   color: var(--secondary-clr);

@@ -1,9 +1,30 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+import CardAstist from "../components/Card_astist.astro"
+
+const fetchArtists = async()=>{
+  const response = await fetch("https://exqcksxuvatecyvatxmi.supabase.co/rest/v1/distortion_artister?", {
+    method:"GET", headers:{apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4cWNrc3h1dmF0ZWN5dmF0eG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzkxNTQsImV4cCI6MjA0NDIxNTE1NH0.Nse7UROdJjarCRlLGfpXxvhK61HZ8cfZE_w_Rha5w_g"}
+  });
+  const artistData = await response.json();
+  return artistData;
+};
+
+const artist = await fetchArtists();
+// console.log(artist);
+
 ---
 <MainLayout title="LineUp">
+<h1>LineUp</h1>
 
-
+<section class="artist-grid">
+    {
+        artist.map((artist) => {
+       return <CardAstist data={artist} />
+  
+        })
+    }
+  </section>
 
 
 
@@ -14,3 +35,12 @@ import MainLayout from "../layouts/MainLayout.astro"
 
 
 </MainLayout>
+<style>
+    .artist-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 10rem;
+    }
+</style>
